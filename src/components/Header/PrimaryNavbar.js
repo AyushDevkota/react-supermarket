@@ -16,13 +16,13 @@ const PrimaryNavbar = () => {
 				</div>
 				<ul className="flex gap-10 text-sm font-medium">
 					<li>
-						<Link to="/createaccount">Create Account</Link>
+						<Link to="/register">Create Account</Link>
 					</li>
 					<li>
 						<Link to="/login">Login</Link>
 					</li>
 					<li>
-						<Link to="/help">Help</Link>
+						<Link to="/contact">Help</Link>
 					</li>
 				</ul>
 				<button>

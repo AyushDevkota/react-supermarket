@@ -1,9 +1,10 @@
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
+import Offer from "../images/offer.png";
 
 const Item = ({ id, img, title, discount_price, full_price }) => {
 	return (
-		<article className="bg-white w-11/12 mx-auto border-2 border-darkgrayborder py-8">
+		<article className="bg-white w-11/12 mx-auto border border-darkgrayborder py-8 relative">
 			<img src={img} alt={title} className="w-1/2 mx-auto" />
 			<h5 className="py-4">{title}</h5>
 			<div className="flex justify-center">
@@ -24,6 +25,7 @@ const Item = ({ id, img, title, discount_price, full_price }) => {
 			<button className="bg-btnblue text-white uppercase w-8/12 py-2 hover:bg-orange">
 				Add to cart
 			</button>
+			<img src={Offer} alt="offer tag" className="absolute top-0 right-0" />
 		</article>
 	);
 };

@@ -24,6 +24,11 @@ module.exports = {
 				twitter: "#1da1f2",
 				web: "#ea4c89",
 				vimeo: "#1ab7ea",
+				bgForm: "#f7f7f9",
+				textForm: "#212121",
+				borderForm: "#dbdbdb",
+				btnForm: "#9f9f9f",
+				pswd: "#d8703f",
 			},
 			gridTemplateColumns: {
 				customGrid: "repeat(6, 1fr)",

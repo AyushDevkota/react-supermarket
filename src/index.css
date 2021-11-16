@@ -16,4 +16,42 @@
 		text-transform: uppercase;
 		font-weight: 500;
 	}
+	.input-form {
+		margin: 0.5rem 0;
+		width: 100%;
+		border: 2px solid #dbdbdb;
+		color: #999999;
+		padding: 0.5rem;
+	}
+	.contact-icons {
+		color: #337ab7;
+	}
+	.fb-container:hover {
+		background-color: #3b5998;
+	}
+	.fb-container:hover .fb,
+	.rss-container:hover .rss,
+	.tmblr-container:hover .tmblr {
+		color: #fff;
+	}
+	.rss-container:hover {
+		background-color: #f26522;
+	}
+	.tmblr-container:hover {
+		background-color: #35465c;
+	}
+	.fb {
+		color: #3b5998;
+	}
+	.rss {
+		color: #f26522;
+	}
+	.tmblr {
+		color: #35465c;
+	}
+}
+
+.leaflet-container {
+	height: 80vh;
+	width: 50vw;
 }
