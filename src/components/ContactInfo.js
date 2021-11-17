@@ -13,9 +13,14 @@ const ContactInfo = () => {
 				<div className="flex flex-col gap-3">
 					<div className="flex items-center gap-2">
 						<BsEnvelope />
-						<Link to="/" className="text-sm">
+						<a
+							href="mailto:info@example.com"
+							target="_blank"
+							rel="noreferrer"
+							className="text-sm"
+						>
 							info@example.com
-						</Link>
+						</a>
 					</div>
 					<div className="flex items-center gap-2">
 						<FaPhoneAlt />

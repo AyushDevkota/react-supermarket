@@ -2,7 +2,6 @@ import React from "react";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { BsGlobe, BsVimeo } from "react-icons/bs";
 import ImgCard from "../../images/card.png";
-import { Link } from "react-router-dom";
 
 const Socials = () => {
 	return (
@@ -10,30 +9,38 @@ const Socials = () => {
 			<div className="container mx-auto">
 				<div className="flex items-center justify-between">
 					<div className="text-white flex gap-2">
-						<Link
-							to="./"
+						<a
+							href="https://www.facebook.com/"
+							target="_blank"
+							rel="noreferrer"
 							className="flex justify-center items-center border-2 border-white rounded-full w-8 h-8 hover:bg-fb hover:border-fb"
 						>
 							<FaFacebookF />
-						</Link>
-						<Link
-							to="./"
+						</a>
+						<a
+							href="https://twitter.com/"
+							target="_blank"
+							rel="noreferrer"
 							className="flex justify-center items-center border-2 border-white rounded-full w-8 h-8 hover:bg-twitter hover:border-twitter"
 						>
 							<FaTwitter />
-						</Link>
-						<Link
-							to="./"
+						</a>
+						<a
+							href="https://www.globe.com.ph/"
+							target="_blank"
+							rel="noreferrer"
 							className="flex justify-center items-center border-2 border-white rounded-full w-8 h-8 hover:bg-web hover:border-web"
 						>
 							<BsGlobe />
-						</Link>
-						<Link
-							to="./"
+						</a>
+						<a
+							href="https://vimeo.com/"
+							target="_blank"
+							rel="noreferrer"
 							className="flex justify-center items-center border-2 border-white rounded-full w-8 h-8 hover:bg-vimeo hover:border-vimeo"
 						>
 							<BsVimeo />
-						</Link>
+						</a>
 						<span></span>
 						<span></span>
 						<span></span>

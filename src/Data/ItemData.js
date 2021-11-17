@@ -1,13 +1,10 @@
-import React from "react";
 import Img1 from "../images/7.png";
 import Img2 from "../images/8.png";
 import Img3 from "../images/9.png";
 import Img4 from "../images/10.png";
 import Img5 from "../images/12.png";
 import Img6 from "../images/13.png";
-import Item from "./Item";
-
-const data = [
+export const data = [
 	{
 		id: 1,
 		img: Img1,
@@ -51,22 +48,3 @@ const data = [
 		full_price: 65.0,
 	},
 ];
-
-const TodayOffers = () => {
-	return (
-		<div>
-			<h3 className="text-2xl">This week</h3>
-			<p className="w-1/2 my-6 text-sm text-darkgray">
-				We've pulled together all our advertised offers into one place, so you
-				won't miss out on a great deal.
-			</p>
-			<div className="mb-8 grid grid-cols-3 place-items-center text-center gap-x-0 gap-y-8 ">
-				{data.map((item) => {
-					return <Item key={item.id} {...item} />;
-				})}
-			</div>
-		</div>
-	);
-};
-
-export default TodayOffers;

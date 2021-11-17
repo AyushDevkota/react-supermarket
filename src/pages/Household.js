@@ -3,20 +3,21 @@ import Header from "../components/Header/Index";
 import GoBack from "../components/GoBack";
 import Footer from "../components/Footer/index";
 import GoToTop from "../components/GoToTop";
-import Contact from "../components/Contact";
+import PaginationItems from "../components/PaginationItems";
 import useDocumentTitle from "../useDocumentTitle";
+import { householdData } from "../Data/PaginationData";
 
-const Help = () => {
-	useDocumentTitle("Supermarket | Contact");
+const Household = () => {
+	useDocumentTitle("Supermarket | Household");
 	return (
 		<>
 			<Header />
-			<GoBack props={"Contact"} />
-			<Contact />
+			<GoBack props={"Household"} />
+			<PaginationItems props={householdData} />
 			<Footer />
 			<GoToTop />
 		</>
 	);
 };
 
-export default Help;
+export default Household;

@@ -3,6 +3,9 @@ module.exports = {
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		extend: {
+			boxShadow: {
+				ul: "0 6px 12px rgb(0 0 0 / 18%)",
+			},
 			colors: {
 				orange: "#fe9126",
 				lightgray: "#333333",
@@ -29,6 +32,12 @@ module.exports = {
 				borderForm: "#dbdbdb",
 				btnForm: "#9f9f9f",
 				pswd: "#d8703f",
+				dropdownborder: "rgba(0, 0, 0, .15)",
+				pagintaionborder: "#dddddd",
+				paghovercolor: "#23527c",
+				paghoverbg: "#eee",
+				text222: "#222222",
+				textbbb: "#bbbbbb",
 			},
 			gridTemplateColumns: {
 				customGrid: "repeat(6, 1fr)",

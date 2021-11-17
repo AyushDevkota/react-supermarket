@@ -1,8 +1,25 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Img1 from "../images/b1.jpg";
 import Img2 from "../images/b3.jpg";
 
-const myImg = [Img1, Img2, Img1];
+const myImg = [
+	{
+		id: 1,
+		img: Img1,
+		url: "/beverages",
+	},
+	{
+		id: 2,
+		img: Img2,
+		url: "/personal",
+	},
+	{
+		id: 2,
+		img: Img2,
+		url: "/household",
+	},
+];
 const delay = 3000;
 const SlideShow = () => {
 	const [index, setIndex] = useState(0);
@@ -35,13 +52,15 @@ const SlideShow = () => {
 				className="whitespace-nowrap transition duration-1000 ease"
 				style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
 			>
-				{myImg.map((item, index) => (
-					<img
-						src={item}
-						alt="background"
-						className="inline-block w-full"
-						key={index}
-					/>
+				{myImg.map(({ id, img, url }) => (
+					<Link to={url}>
+						<img
+							src={img}
+							alt="background"
+							className="inline-block w-full"
+							key={id}
+						/>
+					</Link>
 				))}
 			</div>
 

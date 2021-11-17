@@ -9,7 +9,7 @@ const PrimaryNavbar = () => {
 				<div className="">
 					<p>
 						SALE UP TO 70% OFF. USE CODE "SALE70%".{" "}
-						<Link to="./" className="text-orange">
+						<Link to="/products" className="text-orange">
 							SHOP NOW
 						</Link>{" "}
 					</p>

@@ -52,10 +52,10 @@ const data = [
 	},
 ];
 
-const AdvertisedOffers = () => {
+const FirstTab = ({ title }) => {
 	return (
 		<div>
-			<h3 className="text-2xl">Advertised this week</h3>
+			<h3 className="text-2xl capitalize">{title}</h3>
 			<p className="w-1/2 my-6 text-sm text-darkgray">
 				We've pulled together all our advertised offers into one place, so you
 				won't miss out on a great deal.
@@ -69,4 +69,4 @@ const AdvertisedOffers = () => {
 	);
 };
 
-export default AdvertisedOffers;
+export default FirstTab;

@@ -8,12 +8,14 @@ import BrandStore from "../components/BrandStore";
 import NewOffers from "../components/NewOffers";
 import Footer from "../components/Footer/index";
 import GoToTop from "../components/GoToTop";
+import useDocumentTitle from "../useDocumentTitle";
 const Home = () => {
+	useDocumentTitle("Supermarket | Home");
 	return (
 		<>
 			<Header />
 			<HeroSlideShow />
-			<TopOffers />
+			<TopOffers title={["advertised offers", "today offers"]} />
 			<SlideShow />
 			<GridImg />
 			<BrandStore />

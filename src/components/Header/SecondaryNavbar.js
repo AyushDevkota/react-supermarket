@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import { FaCaretDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import DropDown from "./DropDown";
@@ -8,50 +8,33 @@ import {
 	personal,
 	packaged,
 	beverages,
-} from "./DropDownData";
+} from "../../Data/DropDownData";
+
+const reducer = (state, action) => {
+	switch (action.type) {
+		case "Groceries":
+			return { isGroceriesExpanded: !state.isGroceriesExpanded };
+		case "Household":
+			return { isHouseholdExpanded: !state.isHouseholdExpanded };
+		case "Personal":
+			return { isPersonalExpanded: !state.isPersonalExpanded };
+		case "Packaged":
+			return { isPackagedExpanded: !state.isPackagedExpanded };
+		case "Beverages":
+			return { isBeveragesExpanded: !state.isBeveragesExpanded };
+		default:
+			return state;
+	}
+};
 
 const SecondaryNavbar = () => {
-	// TODO: Learn other hooks so this loooooong piece of code can be reduced.
-	const [isGroceriesExpanded, setIsGroceriesExpanded] = useState(false);
-	const [isHouseholdExpanded, setIsHouseholdExpanded] = useState(false);
-	const [isPersonalExpanded, setIsPersonalExpanded] = useState(false);
-	const [isPackagedExpanded, setIsPackagedExpanded] = useState(false);
-	const [isBeveragesExpanded, setIsBeveragesExpanded] = useState(false);
-	const handleGroceries = () => {
-		setIsGroceriesExpanded(!isGroceriesExpanded);
-		setIsHouseholdExpanded(false);
-		setIsPersonalExpanded(false);
-		setIsPackagedExpanded(false);
-		setIsBeveragesExpanded(false);
-	};
-	const handleHousehold = () => {
-		setIsHouseholdExpanded(!isHouseholdExpanded);
-		setIsGroceriesExpanded(false);
-		setIsPersonalExpanded(false);
-		setIsPackagedExpanded(false);
-		setIsBeveragesExpanded(false);
-	};
-	const handlePersonal = () => {
-		setIsPersonalExpanded(!isPersonalExpanded);
-		setIsHouseholdExpanded(false);
-		setIsGroceriesExpanded(false);
-		setIsPackagedExpanded(false);
-		setIsBeveragesExpanded(false);
-	};
-	const handlePackaged = () => {
-		setIsPackagedExpanded(!isPackagedExpanded);
-		setIsHouseholdExpanded(false);
-		setIsPersonalExpanded(false);
-		setIsGroceriesExpanded(false);
-		setIsBeveragesExpanded(false);
-	};
-	const handleBeverages = () => {
-		setIsBeveragesExpanded(!isBeveragesExpanded);
-		setIsHouseholdExpanded(false);
-		setIsPersonalExpanded(false);
-		setIsPackagedExpanded(false);
-		setIsGroceriesExpanded(false);
-	};
+	const [state, dispatch] = useReducer(reducer, {
+		isGroceriesExpanded: false,
+		isHouseholdExpanded: false,
+		isPersonalExpanded: false,
+		isPackagedExpanded: false,
+		isBeveragesExpanded: false,
+	});
 
 	return (
 		<nav className="bg-orange">
@@ -60,59 +43,59 @@ const SecondaryNavbar = () => {
 					<li>
 						<Link to="/">Home</Link>
 					</li>
-					<li onClick={handleGroceries}>
-						<Link to="/" className="flex items-center relative">
+					<li onClick={() => dispatch({ type: "Groceries" })}>
+						<div className="flex items-center relative cursor-pointer">
 							Groceries
 							<FaCaretDown size={10} />
-							{isGroceriesExpanded && (
+							{state.isGroceriesExpanded && (
 								<DropDown data={groceries} title="All Groceries" />
 							)}
-						</Link>
+						</div>
 					</li>
-					<li onClick={handleHousehold}>
-						<Link to="/" className="flex items-center relative">
+					<li onClick={() => dispatch({ type: "Household" })}>
+						<div className="flex items-center relative cursor-pointer">
 							Household
 							<FaCaretDown size={10} />
-							{isHouseholdExpanded && (
+							{state.isHouseholdExpanded && (
 								<DropDown data={household} title="All Household" />
 							)}
-						</Link>
+						</div>
 					</li>
-					<li onClick={handlePersonal}>
-						<Link to="/" className="flex items-center relative">
+					<li onClick={() => dispatch({ type: "Personal" })}>
+						<div className="flex items-center relative cursor-pointer">
 							Personal Care
 							<FaCaretDown size={10} />
-							{isPersonalExpanded && (
+							{state.isPersonalExpanded && (
 								<DropDown data={personal} title="Baby Care" />
 							)}
-						</Link>
+						</div>
 					</li>
-					<li onClick={handlePackaged}>
-						<Link to="/" className="flex items-center relative">
+					<li onClick={() => dispatch({ type: "Packaged" })}>
+						<div className="flex items-center relative cursor-pointer">
 							Packaged Foods
 							<FaCaretDown size={10} />
-							{isPackagedExpanded && (
+							{state.isPackagedExpanded && (
 								<DropDown data={packaged} title="All Accessories" />
 							)}
-						</Link>
+						</div>
 					</li>
-					<li onClick={handleBeverages}>
-						<Link to="/" className="flex items-center relative">
+					<li onClick={() => dispatch({ type: "Beverages" })}>
+						<div className="flex items-center relative cursor-pointer">
 							Beverages
 							<FaCaretDown size={10} />
-							{isBeveragesExpanded && (
+							{state.isBeveragesExpanded && (
 								<DropDown data={beverages} title="Tea & Coffee" />
 							)}
-						</Link>
+						</div>
 					</li>
 					<li>
-						<Link to="/">Gourmet</Link>
+						<Link to="/gourmet">Gourmet</Link>
 					</li>
 					<li>
-						<Link to="/">Offers</Link>
+						<Link to="/offers">Offers</Link>
 					</li>
 					<li>
-						<Link to="/">Contact</Link>
+						<Link to="/contact">Contact</Link>
 					</li>
 				</ul>
 			</div>

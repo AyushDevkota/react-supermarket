@@ -20,7 +20,14 @@ const Content = () => {
 								<span className="text-orange border-2 border-orange flex p-2 justify-center items-center">
 									<FiMapPin />
 								</span>
-								<p className="ml-2">1234k Avenue, 4th block, New York City.</p>
+								<a
+									href="https://www.google.com/maps/place/New+York,+NY,+USA/@40.6976701,-74.2598651,10z/data=!3m1!4b1!4m5!3m4!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62!8m2!3d40.7127753!4d-74.0059728"
+									target="_blank"
+									rel="noreferrer"
+									className="hover:text-orange ml-2"
+								>
+									1234k Avenue, 4th block, New York City.
+								</a>
 							</li>
 							<li className="flex items-center text-sm py-1 font-medium">
 								<span className="text-orange border-2 border-orange flex p-2 justify-center items-center">
@@ -37,7 +44,9 @@ const Content = () => {
 								<span className="text-orange border-2 border-orange flex p-2 justify-center items-center">
 									<FaPhoneAlt />
 								</span>
-								<p className="ml-2">+1234 567 567</p>
+								<a href="tel:1234 567 567" className="ml-2 hover:text-orange">
+									+1234 567 567
+								</a>
 							</li>
 						</ul>
 					</div>
@@ -51,7 +60,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2">
+								<Link to="/about" className="ml-2 hover:text-orange">
 									About Us
 								</Link>
 							</li>
@@ -59,7 +68,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2">
+								<Link to="/contact" className="ml-2 hover:text-orange">
 									Contact
 								</Link>
 							</li>
@@ -67,7 +76,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2">
+								<Link to="./" className="ml-2 hover:text-orange">
 									Short Codes
 								</Link>
 							</li>
@@ -75,7 +84,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2">
+								<Link to="./" className="ml-2 hover:text-orange">
 									FAQ's
 								</Link>
 							</li>
@@ -83,7 +92,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2">
+								<Link to="/products" className="ml-2 hover:text-orange">
 									Special Products
 								</Link>
 							</li>
@@ -99,7 +108,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2">
+								<Link to="/groceries" className="ml-2 hover:text-orange">
 									Groceries
 								</Link>
 							</li>
@@ -107,7 +116,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2">
+								<Link to="/household" className="ml-2 hover:text-orange">
 									Household
 								</Link>
 							</li>
@@ -115,7 +124,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2">
+								<Link to="/personal" className="ml-2 hover:text-orange">
 									Personal Care
 								</Link>
 							</li>
@@ -123,7 +132,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2">
+								<Link to="/packaged" className="ml-2 hover:text-orange">
 									Packaged Foods
 								</Link>
 							</li>
@@ -131,7 +140,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2">
+								<Link to="/beverages" className="ml-2 hover:text-orange">
 									Beverages
 								</Link>
 							</li>
@@ -147,7 +156,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2">
+								<Link to="/products" className="ml-2 hover:text-orange">
 									Store
 								</Link>
 							</li>
@@ -155,7 +164,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2">
+								<Link to="./" className="ml-2 hover:text-orange">
 									My Cart
 								</Link>
 							</li>
@@ -163,7 +172,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2">
+								<Link to="/login" className="ml-2 hover:text-orange">
 									Login
 								</Link>
 							</li>
@@ -171,7 +180,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2">
+								<Link to="/register" className="ml-2 hover:text-orange">
 									Create Account
 								</Link>
 							</li>
