@@ -38,6 +38,10 @@ module.exports = {
 				paghoverbg: "#eee",
 				text222: "#222222",
 				textbbb: "#bbbbbb",
+				bgprofile: "rgba(51, 153, 204, 0.58)",
+				iconbg: "rgba(149, 149, 149, 0.18)",
+				bge5: "#e5e5e5",
+				texta9: "#a9a9a9",
 			},
 			gridTemplateColumns: {
 				customGrid: "repeat(6, 1fr)",

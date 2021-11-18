@@ -13,6 +13,10 @@ import Products from "./pages/Products";
 import Gourmet from "./pages/Gourmet";
 import Offers from "./pages/Offers";
 import About from "./pages/About";
+import Faq from "./pages/Faq";
+import Codes from "./pages/Codes";
+import Single from "./pages/Single";
+import Checkout from "./pages/Checkout";
 
 function App() {
 	return (
@@ -32,6 +36,10 @@ function App() {
 				<Route path="/gourmet" element={<Gourmet />} />
 				<Route path="/offers" element={<Offers />} />
 				<Route path="/about" element={<About />} />
+				<Route path="/faq" element={<Faq />} />
+				<Route path="/codes" element={<Codes />} />
+				<Route path="/checkout" element={<Checkout />} />
+				<Route path="/single" element={<Single />} />
 			</Routes>
 		</>
 	);

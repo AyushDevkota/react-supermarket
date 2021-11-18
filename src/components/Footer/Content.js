@@ -76,7 +76,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2 hover:text-orange">
+								<Link to="/codes" className="ml-2 hover:text-orange">
 									Short Codes
 								</Link>
 							</li>
@@ -84,7 +84,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2 hover:text-orange">
+								<Link to="/faq" className="ml-2 hover:text-orange">
 									FAQ's
 								</Link>
 							</li>
@@ -164,7 +164,7 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="./" className="ml-2 hover:text-orange">
+								<Link to="/checkout" className="ml-2 hover:text-orange">
 									My Cart
 								</Link>
 							</li>

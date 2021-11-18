@@ -2,54 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-	.underline {
-		background-color: #3399cc;
-		width: 15%;
-		height: 2px;
-		margin: 1em auto 5em;
-	}
-	.sub-title {
-		text-align: center;
-		color: #212121;
-		font-size: 3rem;
-		line-height: 1;
-		text-transform: uppercase;
-		font-weight: 500;
-	}
-	.input-form {
-		margin: 0.5rem 0;
-		width: 100%;
-		border: 2px solid #dbdbdb;
-		color: #999999;
-		padding: 0.5rem;
-	}
-	.contact-icons {
-		color: #337ab7;
-	}
-	.fb-container:hover {
-		background-color: #3b5998;
-	}
-	.fb-container:hover .fb,
-	.rss-container:hover .rss,
-	.tmblr-container:hover .tmblr {
-		color: #fff;
-	}
-	.rss-container:hover {
-		background-color: #f26522;
-	}
-	.tmblr-container:hover {
-		background-color: #35465c;
-	}
-	.fb {
-		color: #3b5998;
-	}
-	.rss {
-		color: #f26522;
-	}
-	.tmblr {
-		color: #35465c;
-	}
+/* Custom CSS */
+.underline {
+	background-color: #3399cc;
+	width: 15%;
+	height: 2px;
+	margin: 1em auto 5em;
+}
+.sub-title {
+	text-align: center;
+	color: #212121;
+	font-size: 3rem;
+	line-height: 1;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+.input-form {
+	margin: 0.5rem 0;
+	width: 100%;
+	border: 2px solid #dbdbdb;
+	color: #999999;
+	padding: 0.5rem;
+}
+.contact-icons {
+	color: #337ab7;
+}
+.fb-container:hover {
+	background-color: #3b5998;
+}
+.fb-container:hover .fb,
+.rss-container:hover .rss,
+.tmblr-container:hover .tmblr {
+	color: #fff;
+}
+.rss-container:hover {
+	background-color: #f26522;
+}
+.tmblr-container:hover {
+	background-color: #35465c;
+}
+.fb {
+	color: #3b5998;
+}
+.rss {
+	color: #f26522;
+}
+.tmblr {
+	color: #35465c;
+}
+.profile:hover .social-bar {
+	display: flex;
 }
 
 .active {
