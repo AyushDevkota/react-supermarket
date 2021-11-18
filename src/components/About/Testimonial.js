@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import Img1 from "../images/icon1.png";
-import Img2 from "../images/icon2.png";
+import React, { useState, useEffect, useRef } from "react";
+import Img1 from "../../images/icon1.png";
+import Img2 from "../../images/icon2.png";
 
+const delay = 3000;
 const data = [
 	{
 		id: 1,
@@ -30,6 +31,20 @@ const data = [
 
 const Testimonial = () => {
 	const [current, setCurrent] = useState(data[0]);
+	const timeoutRef = useRef(null);
+	function resetTimeout() {
+		if (timeoutRef.current) {
+			clearTimeout(timeoutRef.current);
+		}
+	}
+	useEffect(() => {
+		resetTimeout();
+		timeoutRef.current = setTimeout(handleNextTestimonial, delay);
+
+		return () => {
+			resetTimeout();
+		};
+	}, [current]);
 	const handleNextTestimonial = () => {
 		setCurrent((previous) => (previous.id === 3 ? data[0] : data[previous.id]));
 	};

@@ -1,5 +1,5 @@
 import React from "react";
-import Testimonial from "../Testimonial";
+import Testimonial from "./Testimonial";
 
 const RightContent = () => {
 	return (
