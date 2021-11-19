@@ -6,34 +6,45 @@ import Img4 from "../images/p4.jpg";
 
 const GridImg = () => {
 	return (
-		<section className="py-12 container mx-auto">
-			<div className="grid grid-cols-5 grid-row-5 gap-4 sm:pl-24 md:pl-40">
-				<article className="overflow-hidden col-start-3 col-end-5 row-start-1 row-end-4">
+		<section className="py-8 px-8  lg:h-screen lg:flex lg:items-center">
+			<div className="flex flex-col gap-3 md:max-w-3xl md:px-8 lg:max-w-4xl lg:flex-row mx-auto lg:gap-5 xl:max-w-6xl">
+				<article className="overflow-hidden lg:w-1/2">
 					<img
 						src={Img1}
 						alt="Food"
-						className="transform hover:scale-110 duration-1000 ease"
+						className="transform hover:scale-110 duration-1000 ease w-full"
 					/>
 				</article>
-				<article className="overflow-hidden col-start-1 col-end-3 row-start-1 row-end-3">
+				<div className="lg:flex lg:flex-col lg:w-1/2 lg:gap-5">
+					<article className="hidden overflow-hidden lg:block">
+						<img
+							src={Img2}
+							alt="Food"
+							className="transform hover:scale-110 duration-1000 ease w-full"
+						/>
+					</article>
+					<div className="flex gap-3">
+						<article className="overflow-hidden ">
+							<img
+								src={Img3}
+								alt="Food"
+								className="transform hover:scale-110 duration-1000 ease w-full"
+							/>
+						</article>
+						<article className="overflow-hidden ">
+							<img
+								src={Img4}
+								alt="Food"
+								className="transform hover:scale-110 duration-1000 ease w-full"
+							/>
+						</article>
+					</div>
+				</div>
+				<article className="overflow-hidden lg:hidden">
 					<img
 						src={Img2}
 						alt="Food"
-						className="transform hover:scale-110 duration-1000 ease"
-					/>
-				</article>
-				<article className="overflow-hidden col-start-1 col-end-2 row-start-3 row-end-4">
-					<img
-						src={Img3}
-						alt="Food"
-						className="transform hover:scale-110 duration-1000 ease"
-					/>
-				</article>
-				<article className="overflow-hidden col-start-2 col-end-3 row-start-3 row-end-4">
-					<img
-						src={Img4}
-						alt="Food"
-						className="transform hover:scale-110 duration-1000 ease"
+						className="transform hover:scale-110 duration-1000 ease w-full"
 					/>
 				</article>
 			</div>

@@ -45,7 +45,7 @@ const HeroSlideShow = () => {
 					return (
 						<div className="relative inline-block w-full" key={id}>
 							<img src={image_url} alt="department store" className="w-full" />
-							<h3 className="text-white w-1/2 mx-auto text-center text-4xl whitespace-pre-wrap absolute top-1/3 left-1/4 font-medium py-4">
+							<h3 className="text-white w-full lg:text-3xl mx-auto text-center text-sm whitespace-pre-wrap absolute top-1/4 left-0 font-medium py-4 px-8 md:top-1/3 md:text-xl">
 								{imgCaption}
 							</h3>
 						</div>

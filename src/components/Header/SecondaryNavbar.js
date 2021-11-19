@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import { FaCaretDown } from "react-icons/fa";
+import { FcMenu } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import DropDown from "./DropDown";
 import {
@@ -27,7 +28,7 @@ const reducer = (state, action) => {
 	}
 };
 
-const SecondaryNavbar = () => {
+const SecondaryNavbar = ({ toggleMenu }) => {
 	const [state, dispatch] = useReducer(reducer, {
 		isGroceriesExpanded: false,
 		isHouseholdExpanded: false,
@@ -38,8 +39,14 @@ const SecondaryNavbar = () => {
 
 	return (
 		<nav className="bg-orange">
-			<div className="container mx-auto">
-				<ul className="flex justify-between items-center py-4 text-white">
+			<div className="md:px-0 md:max-w-3xl mx-auto md:text-sm lg:max-w-4xl lg:px-0 xl:max-w-6xl">
+				<div
+					className="py-2 px-4 flex justify-end md:hidden"
+					onClick={toggleMenu}
+				>
+					<FcMenu size={20} />
+				</div>
+				<ul className="hidden md:flex flex-col gap-4 md:gap-0 md:flex-row justify-between md:px-8 items-center py-4 text-white lg:px-0">
 					<li>
 						<Link to="/">Home</Link>
 					</li>

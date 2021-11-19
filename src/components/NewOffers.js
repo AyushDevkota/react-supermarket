@@ -37,11 +37,11 @@ const data = [
 ];
 const NewOffers = () => {
 	return (
-		<section className="bg-grayf5 py-20">
-			<div className="container mx-auto">
-				<h3 className="sub-title">New Offers</h3>
-				<div className="underline"></div>
-				<div className="grid grid-cols-custom4Grid text-center">
+		<section className="bg-grayf5 py-8 md:px-8 md:pb-16">
+			<div className="md:max-w-3xl lg:max-w-4xl mx-auto xl:max-w-6xl">
+				<h3 className="sm-sub-title md:text-3xl md:pt-8">New Offers</h3>
+				<div className="sm-underline md:underline md:mb-8"></div>
+				<div className="pt-4 grid px-8 md:px-0 space-y-2 text-center md:grid-cols-2 md:space-y-0 md:gap-y-4 lg:grid-cols-4">
 					{data.map((item) => {
 						return <Item key={item.id} {...item} />;
 					})}

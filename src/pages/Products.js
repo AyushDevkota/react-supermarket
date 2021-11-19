@@ -6,11 +6,13 @@ import GoToTop from "../components/GoToTop";
 import PaginationItems from "../components/PaginationItems";
 import useDocumentTitle from "../useDocumentTitle";
 import { personalData } from "../Data/PaginationData";
+import AddToCart from "../components/AddToCart";
 
 const Products = () => {
 	useDocumentTitle("Supermarket | Products");
 	return (
 		<>
+			<AddToCart />
 			<Header />
 			<GoBack props={"Products"} />
 			<PaginationItems props={personalData} />

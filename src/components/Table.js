@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { data } from "../Data/TableData";
 import Counter from "./Counter";
+import Img2 from "../images/icon2.png";
 
 const Table = () => {
 	const [quantity, setQuantity] = useState(Array(data.length).fill(1));
@@ -61,6 +63,43 @@ const Table = () => {
 					})}
 				</tbody>
 			</table>
+			<div className="pt-10 flex justify-between items-center">
+				<div>
+					<button className="bg-btnblue uppercase text-white font-bold py-4 px-12 hover:bg-orange">
+						<Link to="/products">continue to basket</Link>
+					</button>
+					<ul className="pt-8">
+						<div className="space-y-2">
+							<li className="flex justify-between text-nine">
+								<p>Product 1</p>
+								<p>$30.00</p>
+							</li>
+							<li className="flex justify-between text-nine">
+								<p>Product 2</p>
+								<p>$30.00</p>
+							</li>
+							<li className="flex justify-between text-nine">
+								<p>Product 3</p>
+								<p>$30.00</p>
+							</li>
+							<li className="flex justify-between text-nine">
+								<p>Total Service Charges</p>
+								<p>$15.00</p>
+							</li>
+						</div>
+						<div className="flex justify-between mt-4 border-t border-b py-4 text-lg font-semibold">
+							<p>Total -</p>
+							<p>$105.00</p>
+						</div>
+					</ul>
+				</div>
+				<div>
+					<button className="bg-gray-300 capitalize text-textForm font-bold py-4 px-3 flex items-center gap-2 hover:bg-orange">
+						<img src={Img2} alt="left arrow" />
+						<Link to="/single">continue shopping</Link>
+					</button>
+				</div>
+			</div>
 		</section>
 	);
 };

@@ -8,11 +8,14 @@ import BrandStore from "../components/BrandStore";
 import NewOffers from "../components/NewOffers";
 import Footer from "../components/Footer/index";
 import GoToTop from "../components/GoToTop";
+import AddToCart from "../components/AddToCart";
 import useDocumentTitle from "../useDocumentTitle";
+
 const Home = () => {
 	useDocumentTitle("Supermarket | Home");
 	return (
-		<>
+		<main className="overflow-hidden">
+			<AddToCart />
 			<Header />
 			<HeroSlideShow />
 			<TopOffers title={["advertised offers", "today offers"]} />
@@ -22,7 +25,7 @@ const Home = () => {
 			<NewOffers />
 			<Footer />
 			<GoToTop />
-		</>
+		</main>
 	);
 };
 

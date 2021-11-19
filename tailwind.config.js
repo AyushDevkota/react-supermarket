@@ -3,8 +3,12 @@ module.exports = {
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		extend: {
+			fontSize: {
+				tiny: "10px",
+			},
 			boxShadow: {
 				ul: "0 6px 12px rgb(0 0 0 / 18%)",
+				modal: "2px 2px 10px rgb(0 0 0 / 50%)",
 			},
 			colors: {
 				orange: "#fe9126",
@@ -42,6 +46,8 @@ module.exports = {
 				iconbg: "rgba(149, 149, 149, 0.18)",
 				bge5: "#e5e5e5",
 				texta9: "#a9a9a9",
+				bgmodal: "#fbfbfb",
+				bordermodal: "#d7d7d7",
 			},
 			gridTemplateColumns: {
 				customGrid: "repeat(6, 1fr)",

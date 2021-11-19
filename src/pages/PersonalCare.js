@@ -5,12 +5,14 @@ import Footer from "../components/Footer/index";
 import GoToTop from "../components/GoToTop";
 import PaginationItems from "../components/PaginationItems";
 import useDocumentTitle from "../useDocumentTitle";
+import AddToCart from "../components/AddToCart";
 import { personalData } from "../Data/PaginationData";
 
 const PersonalCare = () => {
 	useDocumentTitle("Supermarket | Personal Care");
 	return (
 		<>
+			<AddToCart />
 			<Header />
 			<GoBack props={"Personal Care"} />
 			<PaginationItems props={personalData} />

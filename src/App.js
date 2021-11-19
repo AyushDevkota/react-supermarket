@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
 import ScrollToTop from "./ScrollToTop";
 import Home from "./pages/Home";
 import CreateAccount from "./pages/CreateAccount";
@@ -18,9 +19,14 @@ import Codes from "./pages/Codes";
 import Single from "./pages/Single";
 import Checkout from "./pages/Checkout";
 
+export const modalContext = React.createContext();
 function App() {
+	const [isShowing, setIsShowing] = useState(false);
+	const closeModal = () => setIsShowing(false);
+	const showModal = () => setIsShowing(true);
+	const providerValues = { isShowing, closeModal, showModal };
 	return (
-		<>
+		<modalContext.Provider value={providerValues}>
 			<ScrollToTop />
 			<Routes>
 				<Route path="/" element={<Home />} />
@@ -41,7 +47,7 @@ function App() {
 				<Route path="/checkout" element={<Checkout />} />
 				<Route path="/single" element={<Single />} />
 			</Routes>
-		</>
+		</modalContext.Provider>
 	);
 }
 

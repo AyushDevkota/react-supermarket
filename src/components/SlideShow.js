@@ -15,7 +15,7 @@ const myImg = [
 		url: "/personal",
 	},
 	{
-		id: 2,
+		id: 3,
 		img: Img2,
 		url: "/household",
 	},
@@ -53,13 +53,8 @@ const SlideShow = () => {
 				style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
 			>
 				{myImg.map(({ id, img, url }) => (
-					<Link to={url}>
-						<img
-							src={img}
-							alt="background"
-							className="inline-block w-full"
-							key={id}
-						/>
+					<Link to={url} key={id}>
+						<img src={img} alt="background" className="inline-block w-full" />
 					</Link>
 				))}
 			</div>

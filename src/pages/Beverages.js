@@ -5,12 +5,14 @@ import Footer from "../components/Footer/index";
 import GoToTop from "../components/GoToTop";
 import PaginationItems from "../components/PaginationItems";
 import useDocumentTitle from "../useDocumentTitle";
+import AddToCart from "../components/AddToCart";
 import { beveragesData } from "../Data/PaginationData";
 
 const Beverages = () => {
 	useDocumentTitle("Supermarket | Beverages");
 	return (
 		<>
+			<AddToCart />
 			<Header />
 			<GoBack props={"Beverages"} />
 			<PaginationItems props={beveragesData} />
