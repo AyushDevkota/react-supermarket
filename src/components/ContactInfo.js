@@ -6,9 +6,9 @@ import { BiRss } from "react-icons/bi";
 
 const ContactInfo = () => {
 	return (
-		<article className="p-8 w-1/2 bg-btnblue absolute top-1/4 left-3/4 z-50 text-white">
-			<div className="p-8 border-4 border-double font-bold">
-				<h2 className=" text-black text-2xl mb-4">Contact Info</h2>
+		<article className="p-4 bg-btnblue absolute top-1/4 left-1/5 z-50 text-white md:w-64 md:p-6 md:left-1/2 lg:w-72">
+			<div className="p-3 border-4 border-double font-bold md:p-6">
+				<h2 className=" text-black text-xl mb-4 md:text-2xl">Contact Info</h2>
 				<p className="mb-8">1234k Avenue, 4th block, New York City.</p>
 				<div className="flex flex-col gap-3">
 					<div className="flex items-center gap-2">

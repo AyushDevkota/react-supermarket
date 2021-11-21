@@ -3,7 +3,7 @@ import Testimonial from "./Testimonial";
 
 const RightContent = () => {
 	return (
-		<aside className="w-1/3">
+		<aside className="">
 			<div className="text-center">
 				<div className="p-4 bg-orange">
 					<h4 className="text-3xl text-white font-bold">Praesentium :</h4>

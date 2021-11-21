@@ -1,6 +1,6 @@
-import Img1 from "../images/t1.jpg";
+import Img3 from "../images/t1.jpg";
 import Img2 from "../images/t2.jpg";
-import Img3 from "../images/t3.jpg";
+import Img1 from "../images/t3.jpg";
 import Img4 from "../images/t4.jpg";
 
 const data = [

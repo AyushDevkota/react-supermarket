@@ -4,8 +4,11 @@ import { FaArrowRight } from "react-icons/fa";
 
 const ParentUl = (props) => {
 	return (
-		<li className="pb-6">
-			<Link to="/" className="flex items-center gap-2 mb-3 hover:text-btnblue">
+		<li className="">
+			<Link
+				to="/products"
+				className="flex items-center gap-2 mb-3 hover:text-btnblue"
+			>
 				<FaArrowRight className="inline text-orange" />
 				{props.title}
 			</Link>

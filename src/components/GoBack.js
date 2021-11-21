@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const GoBack = ({ props }) => {
 	return (
-		<section className="bg-grayf5 py-6">
-			<div className="container mx-auto">
+		<section className="bg-grayf5 py-5">
+			<div className="md:max-w-3xl lg:max-w-4xl xl:max-w-6xl px-4 md:px-8 lg:px-0 mx-auto">
 				<ul className="flex items-center gap-4">
 					<li className="flex items-center">
 						<Link to="/" className="text-btnblue flex ">

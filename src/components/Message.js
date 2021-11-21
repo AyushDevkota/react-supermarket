@@ -1,10 +1,10 @@
 import React from "react";
+import PageTitle from "./PageTitle";
 
 const Message = () => {
 	return (
-		<aside>
-			<div className="sub-title">leave a message</div>
-			<div className="underline"></div>
+		<aside className="lg:w-1/2">
+			<PageTitle title="leave a message" />
 			<form className="flex flex-col">
 				<input
 					type="text"
@@ -28,7 +28,7 @@ const Message = () => {
 					className="input-form"
 					required
 				></textarea>
-				<button className="bg-textForm uppercase hover:bg-btnblue py-4 text-white tracking-widest font-bold">
+				<button className="bg-textForm uppercase hover:bg-btnblue py-4 text-white tracking-widest font-bold mt-5">
 					Submit
 				</button>
 			</form>

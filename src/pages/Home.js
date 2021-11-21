@@ -14,7 +14,7 @@ import useDocumentTitle from "../useDocumentTitle";
 const Home = () => {
 	useDocumentTitle("Supermarket | Home");
 	return (
-		<main className="overflow-hidden">
+		<>
 			<AddToCart />
 			<Header />
 			<HeroSlideShow />
@@ -25,7 +25,7 @@ const Home = () => {
 			<NewOffers />
 			<Footer />
 			<GoToTop />
-		</main>
+		</>
 	);
 };
 

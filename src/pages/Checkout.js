@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/Header/Index";
+import AddToCart from "../components/AddToCart";
 import GoBack from "../components/GoBack";
 import Table from "../components/Table";
 import Footer from "../components/Footer/index";
@@ -10,6 +11,7 @@ const Checkout = () => {
 	useDocumentTitle("Supermarket | Checkout");
 	return (
 		<>
+			<AddToCart />
 			<Header />
 			<GoBack props={"Checkout"} />
 			<Table />

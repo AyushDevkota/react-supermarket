@@ -4,18 +4,18 @@ import Img2 from "../../images/p4.jpg";
 
 const LeftContent = () => {
 	return (
-		<aside className="w-3/5 flex flex-col gap-8">
+		<aside className="flex flex-col gap-6 lg:w-full">
 			<div>
-				<h2 className="text-text222 text-2xl tracking-widest font-bold">
+				<h2 className="text-text222 text-base tracking-widest font-bold lg:text-2xl">
 					Blanditiis praesentium deleniti atque corrupti quos
 				</h2>
-				<p className="my-4 text-nine text-base">
+				<p className="my-4 text-nine text-sm lg:text-base">
 					Gnissimos voluptatum deleniti atque corrupti quos dolores et quas
 					molestias excepturi. atque corrupti quos dolores et quas molestias
 					excepturi sint occaecat officia deserunt mollitia laborum et dolorum
 					fuga
 				</p>
-				<p className="text-nine text-base">
+				<p className="text-nine text-sm lg:text-base">
 					Dignissimos at vero eos et accusamus et iusto odio ducimus qui
 					blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
 					et quas molestias excepturi sint occaecat officia deserunt mollitia

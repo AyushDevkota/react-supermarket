@@ -5,7 +5,7 @@ const BootstrapIcon = ({ data, title }) => {
 	return (
 		<section>
 			<IconTitle title={title} />
-			<div className="grid grid-cols-5 gap-6">
+			<div className="grid grid-cols-3 gap-2 md:grid-cols-5 md:gap-4 xl:gap-6">
 				{data.map(({ id, icon, text }) => {
 					return (
 						<div

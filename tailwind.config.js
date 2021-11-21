@@ -58,5 +58,5 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: ["@tailwindcss/custom-forms"],
 };

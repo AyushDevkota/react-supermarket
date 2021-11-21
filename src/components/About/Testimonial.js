@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Img1 from "../../images/icon1.png";
 import Img2 from "../../images/icon2.png";
+import PageTitle from "../PageTitle";
 
 const delay = 3000;
 const data = [
@@ -55,10 +56,7 @@ const Testimonial = () => {
 	};
 	return (
 		<div className="mt-12">
-			<div className="text-3xl text-center uppercase text-textForm font-medium">
-				testimonial
-			</div>
-			<div className="bg-btnblue h-0.5 w-1/6 mt-1 mb-6 mx-auto"></div>
+			<PageTitle title="testimonial" />
 			<div className="flex justify-center gap-4">
 				<img
 					src={Img2}
@@ -76,16 +74,14 @@ const Testimonial = () => {
 
 			<figure className="bg-btnblue py-12 px-8 mt-4 inline-block w-full">
 				<blockquote>
-					<h3 className="uppercase text-white font-bold text-2xl">
-						{current.title}
+					<h3 className="uppercase text-white font-bold text-base">
+						" {current.title}
 					</h3>
-					<p className="py-3 text-black text-base font-light italic">
-						{current.content}
-					</p>
+					<p className="py-3 text-black text-sm italic">{current.content}</p>
 				</blockquote>
 				<figcaption>
 					<span className="font-bold">{current.author}, </span>
-					<cite className="font-light">{current.position}</cite>
+					<cite className="">{current.position}</cite>
 				</figcaption>
 			</figure>
 		</div>

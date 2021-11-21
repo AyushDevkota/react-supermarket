@@ -6,7 +6,7 @@ const Icons = ({ data, title }) => {
 	return (
 		<article className="py-4">
 			<IconTitle title={title} />
-			<div className="grid grid-cols-4 gap-y-8 gap-x-2">
+			<div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
 				{data.map(({ id, icon, text }) => {
 					return (
 						<Link

@@ -6,8 +6,8 @@ import Img4 from "../images/p4.jpg";
 
 const GridImg = () => {
 	return (
-		<section className="py-8 px-8  lg:h-screen lg:flex lg:items-center">
-			<div className="flex flex-col gap-3 md:max-w-3xl md:px-8 lg:max-w-4xl lg:flex-row mx-auto lg:gap-5 xl:max-w-6xl">
+		<section className="py-8 px-8 lg:flex lg:items-center">
+			<div className="flex flex-col gap-3 md:max-w-3xl md:px-8 lg:max-w-4xl lg:h-screen lg:flex-row mx-auto lg:gap-5 xl:max-w-6xl">
 				<article className="overflow-hidden lg:w-1/2">
 					<img
 						src={Img1}

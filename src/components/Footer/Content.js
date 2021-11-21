@@ -11,12 +11,12 @@ const Content = () => {
 		<article className="bg-bgContent px-3 pt-8 pb-4">
 			<div className="md:px-8 md:max-w-3xl mx-auto lg:max-w-4xl lg:px-0 xl:max-w-6xl">
 				<div className="grid gap-8 text-textContent md:grid-cols-2 lg:grid-cols-4 lg:py-8">
-					<div className="contact">
+					<div>
 						<h3 className="text-white uppercase mb-2 text-xl font-semibold md:mb-6 md:text-2xl">
 							contact
 						</h3>
-						<ul>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+						<ul className="lg:space-y-2 text-xs md:text-sm">
+							<li className="flex items-center py-1 font-medium">
 								<span className="text-orange border-2 border-orange flex p-2 justify-center items-center">
 									<FiMapPin />
 								</span>
@@ -29,7 +29,7 @@ const Content = () => {
 									1234k Avenue, 4th block, New York City.
 								</a>
 							</li>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+							<li className="flex items-center py-1 font-medium">
 								<span className="text-orange border-2 border-orange flex p-2 justify-center items-center">
 									<BsEnvelope />
 								</span>
@@ -40,7 +40,7 @@ const Content = () => {
 									info@example.com
 								</a>
 							</li>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+							<li className="flex items-center py-1 font-medium">
 								<span className="text-orange border-2 border-orange flex p-2 justify-center items-center">
 									<FaPhoneAlt />
 								</span>
@@ -51,12 +51,12 @@ const Content = () => {
 						</ul>
 					</div>
 
-					<div className="information">
+					<div>
 						<h3 className="text-white uppercase mb-2 text-xl font-semibold md:mb-6 md:text-2xl">
 							information
 						</h3>
-						<ul>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+						<ul className="lg:space-y-2 text-xs md:text-sm">
+							<li className="flex items-center  py-1 font-medium">
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
@@ -64,7 +64,7 @@ const Content = () => {
 									About Us
 								</Link>
 							</li>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+							<li className="flex items-center  py-1 font-medium">
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
@@ -72,7 +72,7 @@ const Content = () => {
 									Contact
 								</Link>
 							</li>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+							<li className="flex items-center  py-1 font-medium">
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
@@ -80,7 +80,7 @@ const Content = () => {
 									Short Codes
 								</Link>
 							</li>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+							<li className="flex items-center  py-1 font-medium">
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
@@ -88,7 +88,7 @@ const Content = () => {
 									FAQ's
 								</Link>
 							</li>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+							<li className="flex items-center  py-1 font-medium">
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
@@ -99,12 +99,12 @@ const Content = () => {
 						</ul>
 					</div>
 
-					<div className="category">
+					<div>
 						<h3 className="text-white uppercase mb-2 text-xl font-semibold md:mb-6 md:text-2xl">
 							category
 						</h3>
-						<ul>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+						<ul className="lg:space-y-2 text-xs md:text-sm">
+							<li className="flex items-center  py-1 font-medium">
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
@@ -112,7 +112,7 @@ const Content = () => {
 									Groceries
 								</Link>
 							</li>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+							<li className="flex items-center  py-1 font-medium">
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
@@ -120,7 +120,7 @@ const Content = () => {
 									Household
 								</Link>
 							</li>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+							<li className="flex items-center  py-1 font-medium">
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
@@ -128,7 +128,7 @@ const Content = () => {
 									Personal Care
 								</Link>
 							</li>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+							<li className="flex items-center  py-1 font-medium">
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
@@ -136,7 +136,7 @@ const Content = () => {
 									Packaged Foods
 								</Link>
 							</li>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+							<li className="flex items-center  py-1 font-medium">
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
@@ -147,12 +147,12 @@ const Content = () => {
 						</ul>
 					</div>
 
-					<div className="profile">
+					<div>
 						<h3 className="text-white uppercase mb-2 text-xl font-semibold md:mb-6 md:text-2xl">
 							profile
 						</h3>
-						<ul>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+						<ul className="lg:space-y-2 text-xs md:text-sm">
+							<li className="flex items-center py-1 font-medium">
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
@@ -160,7 +160,7 @@ const Content = () => {
 									Store
 								</Link>
 							</li>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+							<li className="flex items-center py-1 font-medium">
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
@@ -168,7 +168,7 @@ const Content = () => {
 									My Cart
 								</Link>
 							</li>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+							<li className="flex items-center py-1 font-medium">
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
@@ -176,7 +176,7 @@ const Content = () => {
 									Login
 								</Link>
 							</li>
-							<li className="flex items-center text-xs py-1 font-medium md:text-sm">
+							<li className="flex items-center py-1 font-medium">
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
@@ -188,7 +188,7 @@ const Content = () => {
 					</div>
 				</div>
 
-				<div className="pt-7 text-center text-nine text-sm md:text-base md:py-8">
+				<div className="pt-7 text-center text-nine text-sm md:text-base md:pt-8">
 					&copy; {currentYear} Super Market. All rights reserved | Design by{" "}
 					<a
 						href="https://github.com/AyushDevkota"

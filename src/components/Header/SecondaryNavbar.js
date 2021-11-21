@@ -46,7 +46,7 @@ const SecondaryNavbar = ({ toggleMenu }) => {
 				>
 					<FcMenu size={20} />
 				</div>
-				<ul className="hidden md:flex flex-col gap-4 md:gap-0 md:flex-row justify-between md:px-8 items-center py-4 text-white lg:px-0">
+				<ul className="hidden md:flex flex-col gap-4 md:gap-0 md:flex-row justify-between md:px-8 items-center py-4 text-white lg:px-0 lg:text-base xl:text-lg">
 					<li>
 						<Link to="/">Home</Link>
 					</li>

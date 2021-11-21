@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header/Index";
 import GoBack from "../components/GoBack";
 import SingleProduct from "../components/SingleProduct";
+import AddToCart from "../components/AddToCart";
 import Footer from "../components/Footer/index";
 import GoToTop from "../components/GoToTop";
 import useDocumentTitle from "../useDocumentTitle";
@@ -11,6 +12,7 @@ const Single = () => {
 	useDocumentTitle("Supermarket | Single");
 	return (
 		<>
+			<AddToCart />
 			<Header />
 			<GoBack props={"Single Page"} />
 			<SingleProduct {...data} />
