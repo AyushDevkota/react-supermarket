@@ -26,13 +26,13 @@ const PrimaryNavbar = () => {
 					<li>
 						<Link to="/contact">Help</Link>
 					</li>
-					<button className="md:hidden">
-						<FaCartArrowDown size={22} onClick={showModal} />
-					</button>
+					<Link to="/checkout" className="md:hidden">
+						<FaCartArrowDown size={22} />
+					</Link>
 				</ul>
-				<button className="hidden md:block">
-					<FaCartArrowDown size={22} onClick={showModal} />
-				</button>
+				<Link to="/checkout" className="hidden md:block">
+					<FaCartArrowDown size={22} />
+				</Link>
 			</div>
 		</nav>
 	);

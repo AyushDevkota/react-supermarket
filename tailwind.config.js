@@ -1,3 +1,4 @@
+const colors = require("tailwindcss/colors");
 module.exports = {
 	purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
 	darkMode: false, // or 'media' or 'class'
@@ -11,6 +12,7 @@ module.exports = {
 				modal: "2px 2px 10px rgb(0 0 0 / 50%)",
 			},
 			colors: {
+				teal: colors.teal,
 				orange: "#fe9126",
 				lightgray: "#333333",
 				grayccc: "#cccccc",

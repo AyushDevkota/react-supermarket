@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { modalContext } from "../../App";
 import { FaArrowRight, FaPhoneAlt } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 import { BsEnvelope } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const Content = () => {
+	const { categories } = useContext(modalContext);
 	const date = new Date();
 	const currentYear = date.getFullYear();
 	return (
@@ -88,14 +90,6 @@ const Content = () => {
 									FAQ's
 								</Link>
 							</li>
-							<li className="flex items-center  py-1 font-medium">
-								<span className="text-orange">
-									<FaArrowRight />
-								</span>
-								<Link to="/products" className="ml-2 hover:text-orange">
-									Special Products
-								</Link>
-							</li>
 						</ul>
 					</div>
 
@@ -104,46 +98,24 @@ const Content = () => {
 							category
 						</h3>
 						<ul className="lg:space-y-2 text-xs md:text-sm">
-							<li className="flex items-center  py-1 font-medium">
-								<span className="text-orange">
-									<FaArrowRight />
-								</span>
-								<Link to="/groceries" className="ml-2 hover:text-orange">
-									Groceries
-								</Link>
-							</li>
-							<li className="flex items-center  py-1 font-medium">
-								<span className="text-orange">
-									<FaArrowRight />
-								</span>
-								<Link to="/household" className="ml-2 hover:text-orange">
-									Household
-								</Link>
-							</li>
-							<li className="flex items-center  py-1 font-medium">
-								<span className="text-orange">
-									<FaArrowRight />
-								</span>
-								<Link to="/personal" className="ml-2 hover:text-orange">
-									Personal Care
-								</Link>
-							</li>
-							<li className="flex items-center  py-1 font-medium">
-								<span className="text-orange">
-									<FaArrowRight />
-								</span>
-								<Link to="/packaged" className="ml-2 hover:text-orange">
-									Packaged Foods
-								</Link>
-							</li>
-							<li className="flex items-center  py-1 font-medium">
-								<span className="text-orange">
-									<FaArrowRight />
-								</span>
-								<Link to="/beverages" className="ml-2 hover:text-orange">
-									Beverages
-								</Link>
-							</li>
+							{categories.map((category) => {
+								return (
+									<li
+										className="flex items-center  py-1 font-medium"
+										key={category.id}
+									>
+										<span className="text-orange">
+											<FaArrowRight />
+										</span>
+										<Link
+											to={`/categories/${category.slug}`}
+											className="ml-2 hover:text-orange uppercase"
+										>
+											{category.title}
+										</Link>
+									</li>
+								);
+							})}
 						</ul>
 					</div>
 

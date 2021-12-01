@@ -8,7 +8,10 @@ const ChildUl = ({ data }) => {
 			{data.map((item) => {
 				return (
 					<li key={item.id} className="hover:text-btnblue">
-						<Link to="/prdoucts" className="flex items-center gap-2">
+						<Link
+							to={`/categories/${item.slug}`}
+							className="flex items-center gap-2"
+						>
 							<FaArrowRight className="inline text-orange" />
 							{item.title}
 						</Link>

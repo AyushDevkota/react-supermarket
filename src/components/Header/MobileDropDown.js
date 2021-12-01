@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { modalContext } from "../../App";
 
 const MobileDropDown = ({ isOpen, toggleMenu }) => {
+	const { homeData, isLoading, error } = useContext(modalContext);
+	let content = <p></p>;
+	if (Object.keys(homeData).length > 0) {
+		content = homeData.data[1].categories.map((data) => {
+			return (
+				<li key={data.id}>
+					<Link to={`/categories/${data.slug}`}>{data.title}</Link>
+				</li>
+			);
+		});
+	}
+	if (error) {
+		content = <p>{error}</p>;
+	}
+	if (isLoading) {
+		content = <p></p>;
+	}
 	return (
 		<ul
 			className={
@@ -14,30 +32,7 @@ const MobileDropDown = ({ isOpen, toggleMenu }) => {
 			<li>
 				<Link to="/">Home</Link>
 			</li>
-			<li>
-				<Link to="/groceries">Groceries</Link>
-			</li>
-			<li>
-				<Link to="/household">Household</Link>
-			</li>
-			<li>
-				<Link to="/personal">Personal Care</Link>
-			</li>
-			<li>
-				<Link to="/packaged">Packaged Foods</Link>
-			</li>
-			<li>
-				<Link to="/beverages">Beverages</Link>
-			</li>
-			<li>
-				<Link to="/gourmet">Gourmet</Link>
-			</li>
-			<li>
-				<Link to="/offers">Offers</Link>
-			</li>
-			<li>
-				<Link to="/contact">Contact</Link>
-			</li>
+			{content}
 		</ul>
 	);
 };

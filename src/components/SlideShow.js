@@ -1,79 +1,22 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import Img1 from "../images/b1.jpg";
-import Img2 from "../images/b3.jpg";
+import React, { useContext } from "react";
+import { modalContext } from "../App";
+import Slides from "./Slides";
 
-const myImg = [
-	{
-		id: 1,
-		img: Img1,
-		url: "/beverages",
-	},
-	{
-		id: 2,
-		img: Img2,
-		url: "/personal",
-	},
-	{
-		id: 3,
-		img: Img2,
-		url: "/household",
-	},
-];
-const delay = 3000;
 const SlideShow = () => {
-	const [index, setIndex] = useState(0);
-	const timeoutRef = useRef(null);
+	const { homeData, isLoading, error } = useContext(modalContext);
 
-	function resetTimeout() {
-		if (timeoutRef.current) {
-			clearTimeout(timeoutRef.current);
-		}
+	let content = <p>Found no data.</p>;
+	if (Object.keys(homeData).length > 0) {
+		content = <Slides homeData={homeData.data[0].details} />;
+	}
+	if (error) {
+		content = <p>{error}</p>;
+	}
+	if (isLoading) {
+		content = <p></p>;
 	}
 
-	useEffect(() => {
-		resetTimeout();
-		timeoutRef.current = setTimeout(
-			() =>
-				setIndex((prevIndex) =>
-					prevIndex === myImg.length - 1 ? 0 : prevIndex + 1
-				),
-			delay
-		);
-
-		return () => {
-			resetTimeout();
-		};
-	}, [index]);
-
-	return (
-		<article className="mx-auto overflow-hidden">
-			<div
-				className="whitespace-nowrap transition duration-1000 ease"
-				style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-			>
-				{myImg.map(({ id, img, url }) => (
-					<Link to={url} key={id}>
-						<img src={img} alt="background" className="inline-block w-full" />
-					</Link>
-				))}
-			</div>
-
-			<div className="text-center">
-				{myImg.map((_, idx) => (
-					<div
-						key={idx}
-						className={`inline-block h-3 w-3 rounded-full cursor-pointer mt-4 mx-2  ${
-							index === idx ? "bg-yellow" : "bg-green"
-						}`}
-						onClick={() => {
-							setIndex(idx);
-						}}
-					></div>
-				))}
-			</div>
-		</article>
-	);
+	return <>{content}</>;
 };
 
 export default SlideShow;

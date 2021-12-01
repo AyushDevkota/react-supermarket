@@ -3,22 +3,20 @@ import Header from "../components/Header/Index";
 import GoBack from "../components/GoBack";
 import Footer from "../components/Footer/index";
 import GoToTop from "../components/GoToTop";
-import PaginationItems from "../components/PaginationItems";
 import useDocumentTitle from "../useDocumentTitle";
-import AddToCart from "../components/AddToCart";
+import ResetPassword from "../components/ResetPassword";
 
-const Products = () => {
-	useDocumentTitle("Supermarket | Products");
+const ForgotPassword = () => {
+	useDocumentTitle("Supermarket | Forgot Password");
 	return (
 		<>
-			<AddToCart />
 			<Header />
-			<GoBack props={"Products"} />
-			<PaginationItems />
+			<GoBack props={"Forgot Password"} />
+			<ResetPassword />
 			<Footer />
 			<GoToTop />
 		</>
 	);
 };
 
-export default Products;
+export default ForgotPassword;

@@ -1,44 +1,75 @@
-import React, { useReducer } from "react";
-import { FaCaretDown } from "react-icons/fa";
+import React, { useContext, useEffect, useState } from "react";
 import { FcMenu } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { modalContext } from "../../App";
 import DropDown from "./DropDown";
-import {
-	groceries,
-	household,
-	personal,
-	packaged,
-	beverages,
-} from "../../Data/DropDownData";
-
-const reducer = (state, action) => {
-	switch (action.type) {
-		case "Groceries":
-			return { isGroceriesExpanded: !state.isGroceriesExpanded };
-		case "Household":
-			return { isHouseholdExpanded: !state.isHouseholdExpanded };
-		case "Personal":
-			return { isPersonalExpanded: !state.isPersonalExpanded };
-		case "Packaged":
-			return { isPackagedExpanded: !state.isPackagedExpanded };
-		case "Beverages":
-			return { isBeveragesExpanded: !state.isBeveragesExpanded };
-		default:
-			return state;
-	}
-};
+import { AiFillCaretDown } from "react-icons/ai";
 
 const SecondaryNavbar = ({ toggleMenu }) => {
-	const [state, dispatch] = useReducer(reducer, {
-		isGroceriesExpanded: false,
-		isHouseholdExpanded: false,
-		isPersonalExpanded: false,
-		isPackagedExpanded: false,
-		isBeveragesExpanded: false,
-	});
+	const { isLoading, error, categories } = useContext(modalContext);
+	const [visibility, setVisibility] = useState(false);
+	const [hover, setHover] = useState(false);
+	const toggleVisibility = () => {
+		if (window.scrollY > 350) {
+			setVisibility(true);
+		} else {
+			setVisibility(false);
+		}
+	};
+	useEffect(() => {
+		window.addEventListener("scroll", toggleVisibility);
+		return () => {
+			window.removeEventListener("scroll", toggleVisibility);
+		};
+	}, []);
+
+	let content = <p></p>;
+	if (categories.length > 0) {
+		content = categories.map((data) => {
+			return (
+				<li
+					key={data.id}
+					className="py-4"
+					onMouseEnter={() => {
+						if (data.subcategories.length > 0) {
+							setHover(true);
+						}
+					}}
+					onMouseLeave={() => {
+						if (data.subcategories.length > 0) {
+							setHover(false);
+						}
+					}}
+				>
+					<div className="flex items-center relative cursor-pointer">
+						<Link
+							to={`/categories/${data.slug}`}
+							className="flex items-center gap-1 uppercase"
+						>
+							{data.title}
+							{data.subcategories.length > 0 && <AiFillCaretDown size={10} />}
+						</Link>
+						{data.subcategories.length > 0 && (
+							<DropDown data={data.subcategories} hover={hover} />
+						)}
+					</div>
+				</li>
+			);
+		});
+	}
+	if (error) {
+		content = <p>{error}</p>;
+	}
+	if (isLoading) {
+		content = <p></p>;
+	}
 
 	return (
-		<nav className="bg-orange">
+		<nav
+			className={`bg-orange md:${
+				visibility ? "fixed inset-x-0 top-0 z-30" : ""
+			}`}
+		>
 			<div className="md:px-0 md:max-w-3xl mx-auto md:text-sm lg:max-w-4xl lg:px-0 xl:max-w-6xl">
 				<div
 					className="py-2 px-4 flex justify-end md:hidden"
@@ -46,64 +77,13 @@ const SecondaryNavbar = ({ toggleMenu }) => {
 				>
 					<FcMenu size={20} />
 				</div>
-				<ul className="hidden md:flex flex-col gap-4 md:gap-0 md:flex-row justify-between md:px-8 items-center py-4 text-white lg:px-0 lg:text-base xl:text-lg">
-					<li>
-						<Link to="/">Home</Link>
+				<ul className="hidden md:flex flex-col gap-4 md:gap-8 md:flex-row md:px-8 md:justify-between items-center  text-white lg:px-0 lg:text-base">
+					<li className="py-4">
+						<Link to="/" className="uppercase">
+							Home
+						</Link>
 					</li>
-					<li onClick={() => dispatch({ type: "Groceries" })}>
-						<div className="flex items-center relative cursor-pointer">
-							Groceries
-							<FaCaretDown size={10} />
-							{state.isGroceriesExpanded && (
-								<DropDown data={groceries} title="All Groceries" />
-							)}
-						</div>
-					</li>
-					<li onClick={() => dispatch({ type: "Household" })}>
-						<div className="flex items-center relative cursor-pointer">
-							Household
-							<FaCaretDown size={10} />
-							{state.isHouseholdExpanded && (
-								<DropDown data={household} title="All Household" />
-							)}
-						</div>
-					</li>
-					<li onClick={() => dispatch({ type: "Personal" })}>
-						<div className="flex items-center relative cursor-pointer">
-							Personal Care
-							<FaCaretDown size={10} />
-							{state.isPersonalExpanded && (
-								<DropDown data={personal} title="Baby Care" />
-							)}
-						</div>
-					</li>
-					<li onClick={() => dispatch({ type: "Packaged" })}>
-						<div className="flex items-center relative cursor-pointer">
-							Packaged Foods
-							<FaCaretDown size={10} />
-							{state.isPackagedExpanded && (
-								<DropDown data={packaged} title="All Accessories" />
-							)}
-						</div>
-					</li>
-					<li onClick={() => dispatch({ type: "Beverages" })}>
-						<div className="flex items-center relative cursor-pointer">
-							Beverages
-							<FaCaretDown size={10} />
-							{state.isBeveragesExpanded && (
-								<DropDown data={beverages} title="Tea & Coffee" />
-							)}
-						</div>
-					</li>
-					<li>
-						<Link to="/gourmet">Gourmet</Link>
-					</li>
-					<li>
-						<Link to="/offers">Offers</Link>
-					</li>
-					<li>
-						<Link to="/contact">Contact</Link>
-					</li>
+					{content}
 				</ul>
 			</div>
 		</nav>

@@ -1,15 +1,14 @@
 import React from "react";
 import Header from "../components/Header/Index";
-import HeroSlideShow from "../components/HeroSlideShow";
-import TopOffers from "../components/TopOffers";
+import Categories from "../components/Categories";
 import SlideShow from "../components/SlideShow";
 import GridImg from "../components/GridImg";
-import BrandStore from "../components/BrandStore";
-import NewOffers from "../components/NewOffers";
+import NewDishes from "../components/NewDishes";
 import Footer from "../components/Footer/index";
 import GoToTop from "../components/GoToTop";
 import AddToCart from "../components/AddToCart";
 import useDocumentTitle from "../useDocumentTitle";
+import TodaysDeals from "../components/TodaysDeals";
 
 const Home = () => {
 	useDocumentTitle("Supermarket | Home");
@@ -17,12 +16,11 @@ const Home = () => {
 		<>
 			<AddToCart />
 			<Header />
-			<HeroSlideShow />
-			<TopOffers title={["advertised offers", "today offers"]} />
 			<SlideShow />
+			<Categories />
+			<NewDishes />
 			<GridImg />
-			<BrandStore />
-			<NewOffers />
+			<TodaysDeals />
 			<Footer />
 			<GoToTop />
 		</>

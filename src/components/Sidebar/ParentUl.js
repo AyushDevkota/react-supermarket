@@ -2,17 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
-const ParentUl = (props) => {
+const ParentUl = ({ data }) => {
 	return (
 		<li className="">
 			<Link
-				to="/products"
-				className="flex items-center gap-2 mb-3 hover:text-btnblue"
+				to={`/categories/${data.slug}`}
+				className="flex items-center gap-2 mb-3 hover:text-btnblue uppercase"
 			>
 				<FaArrowRight className="inline text-orange" />
-				{props.title}
+				{data.title}
 			</Link>
-			{props.children}
+			{data.children}
 		</li>
 	);
 };
