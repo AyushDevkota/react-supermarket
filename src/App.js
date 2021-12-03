@@ -6,7 +6,6 @@ import CreateAccount from "./pages/CreateAccount";
 import Login from "./pages/Login";
 import Help from "./pages/Help";
 import Products from "./pages/Products";
-import Offers from "./pages/Offers";
 import About from "./pages/About";
 import Faq from "./pages/Faq";
 import Codes from "./pages/Codes";
@@ -40,7 +39,7 @@ function App() {
 
 	useEffect(() => {
 		fetchCartData();
-	}, [currentUser, addItem, cartData]);
+	}, [currentUser, addItem]);
 
 	const fetchData = useCallback(async () => {
 		setIsLoading(true);
@@ -73,7 +72,6 @@ function App() {
 			setError(error.message);
 		}
 		setIsLoading(false);
-		console.log("In fetch home data");
 	}, []);
 
 	useEffect(() => {
@@ -96,8 +94,6 @@ function App() {
 			},
 		});
 		const fetchedCartData = await responseCartData.json();
-		setCartData(fetchedCartData.data);
-		console.log("In fetch cart data");
 	};
 
 	// API call to delete item
@@ -112,6 +108,7 @@ function App() {
 				cartProductId: id,
 			},
 		});
+		fetchCartData();
 	};
 
 	// API call to add to cart
@@ -195,7 +192,6 @@ function App() {
 				<Route path="/login" element={<Login />} />
 				<Route path="/contact" element={<Help />} />
 				<Route path="/categories/:slug" element={<Products />} />
-				<Route path="/offers" element={<Offers />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/faq" element={<Faq />} />
 				<Route path="/codes" element={<Codes />} />

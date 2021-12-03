@@ -26,11 +26,13 @@ const formReducer = (state, action) => {
 const Form = () => {
 	const navigate = useNavigate();
 
-	const { base_url, auth, isMessage, setIsMessage, setMessage, setNewAccount } =
+	const { base_url, auth, isMessage, setIsMessage, setMessage, setSuccess } =
 		useContext(modalContext);
 	useEffect(() => {
 		setIsMessage(false);
 	}, [setIsMessage]);
+
+	// API call which creates a new account.
 	const addUser = async (user) => {
 		const { confirmPassword, ...others } = user;
 		if (user.password !== user.confirmPassword) {
@@ -52,7 +54,7 @@ const Form = () => {
 		}
 		user.id = data.id;
 		setMessage("Account Created Successfully");
-		setNewAccount(true);
+		setSuccess(true);
 		navigate("/login");
 	};
 	const [formState, dispatchFormState] = useReducer(formReducer, {

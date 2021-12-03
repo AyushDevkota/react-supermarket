@@ -17,11 +17,14 @@ const LoginForm = () => {
 		setMessage,
 		setIsMessage,
 		setCurrentUser,
+		setSuccess,
 	} = useContext(modalContext);
+
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const emailChangeHandler = (e) => setEmail(e.target.value);
 	const passwordChangeHandler = (e) => setPassword(e.target.value);
+
 	const checkLogin = async (user) => {
 		const requestOptions = {
 			method: "POST",
@@ -37,8 +40,10 @@ const LoginForm = () => {
 		}
 		const { access_token } = data;
 		setCurrentUser({ access_token });
+		setSuccess(false);
 		navigate("/");
 	};
+
 	const loginFormHandler = (e) => {
 		e.preventDefault();
 		checkLogin({

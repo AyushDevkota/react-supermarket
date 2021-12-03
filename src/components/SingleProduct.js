@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const SingleProduct = () => {
 	let navigate = useNavigate();
+
 	const [products, setProducts] = useState([]);
 	const [value, setValue] = useState(1);
 	const { base_url, api_key, currentUser, updateCart, addToCart, cartData } =

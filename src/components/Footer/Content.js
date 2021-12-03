@@ -128,14 +128,6 @@ const Content = () => {
 								<span className="text-orange">
 									<FaArrowRight />
 								</span>
-								<Link to="/products" className="ml-2 hover:text-orange">
-									Store
-								</Link>
-							</li>
-							<li className="flex items-center py-1 font-medium">
-								<span className="text-orange">
-									<FaArrowRight />
-								</span>
 								<Link to="/checkout" className="ml-2 hover:text-orange">
 									My Cart
 								</Link>

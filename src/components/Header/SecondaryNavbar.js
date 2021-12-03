@@ -68,7 +68,7 @@ const SecondaryNavbar = ({ toggleMenu }) => {
 	return (
 		<nav
 			className={`bg-orange md:${
-				visibility ? "fixed inset-x-0 top-0 z-30" : ""
+				visibility ? "fixed inset-x-0 top-0 z-50" : ""
 			}`}
 		>
 			<div className="md:px-0 md:max-w-3xl mx-auto md:text-sm lg:max-w-4xl lg:px-0 xl:max-w-6xl">

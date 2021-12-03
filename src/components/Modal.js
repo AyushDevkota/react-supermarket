@@ -9,6 +9,7 @@ const Modal = ({ closeModal }) => {
 	const { modalContent, addToCart, cartData, updateCart, currentUser } =
 		useContext(modalContext);
 	const [value, setValue] = useState(1);
+
 	const checkCart = (id, val, price) => {
 		if (!currentUser) {
 			navigate("/login");
@@ -52,7 +53,7 @@ const Modal = ({ closeModal }) => {
 										{modalContent.title}
 									</h2>
 									<p className="text-orange font-semibold">
-										NRS {modalContent.unitPrice[0].sellingPrice * value}
+										NRS {modalContent.unitPrice[0].sellingPrice * value}&nbsp;
 										(Including Tax)
 									</p>
 									<div className="flex gap-5">
