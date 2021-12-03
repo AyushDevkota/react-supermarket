@@ -94,6 +94,7 @@ function App() {
 			},
 		});
 		const fetchedCartData = await responseCartData.json();
+		setCartData(fetchedCartData);
 	};
 
 	// API call to delete item
