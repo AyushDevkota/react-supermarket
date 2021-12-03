@@ -15,7 +15,6 @@ const Modal = ({ closeModal }) => {
 			navigate("/login");
 			return;
 		}
-		console.log(cartData);
 		const product = cartData.cartProducts.filter(
 			(product) => product.product.id === id
 		);
