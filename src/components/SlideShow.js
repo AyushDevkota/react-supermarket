@@ -5,7 +5,7 @@ import Slides from "./Slides";
 const SlideShow = () => {
 	const { homeData, isLoading, error } = useContext(modalContext);
 
-	let content = <p>Found no data.</p>;
+	let content = <p></p>;
 	if (Object.keys(homeData).length > 0) {
 		content = <Slides homeData={homeData.data[0].details} />;
 	}

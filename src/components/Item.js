@@ -1,29 +1,38 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { modalContext } from "../App";
 
-const Item = ({ data }) => {
+const Item = ({ data, loading }) => {
 	const { showModal, currentItem } = useContext(modalContext);
+
 	return (
 		<article className="bg-white mx-auto border rounded-lg hover:border-orange">
-			<img
-				src={data.images[0].imageName}
-				alt={data.title}
-				className="rounded-t-lg"
-			/>
-			<div className="p-4 space-y-2">
-				<h1 className="text-xs">{data.categoryTitle}</h1>
-				<h2 className="text-sm font-bold">{data.title}</h2>
+			<Link to={`/products/${data.slug}`}>
+				<img
+					src={data.images[0].imageName}
+					alt={data.title}
+					className="rounded-t-lg"
+					loading={loading}
+				/>
+			</Link>
+			<div className="p-4 flex flex-col gap-2">
+				<Link to={`/categories/${data.categorySlug}`} className="text-xs">
+					{data.categoryTitle}
+				</Link>
+				<Link to={`/products/${data.slug}`} className="text-sm font-bold">
+					{data.title}
+				</Link>
 				<p className="text-green text-sm">
 					NRS {data.unitPrice[0].sellingPrice}
 				</p>
 				<button
-					className="uppercase text-sm hover:underline"
+					className="uppercase text-sm hover:underline text-left w-max"
 					onClick={function () {
 						showModal();
 						currentItem(data);
 					}}
 				>
-					Add to Cart
+					add to cart
 				</button>
 			</div>
 		</article>

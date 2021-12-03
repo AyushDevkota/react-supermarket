@@ -32,7 +32,11 @@ const Pagination = () => {
 				{categories
 					.filter((category) => category.categorySlug === slug)
 					.map((filteredCategory) => (
-						<Item data={filteredCategory} key={filteredCategory.id} />
+						<Item
+							data={filteredCategory}
+							key={filteredCategory.id}
+							loading="eager"
+						/>
 					))}
 			</div>
 		);

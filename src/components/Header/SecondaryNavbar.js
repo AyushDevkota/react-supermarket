@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { modalContext } from "../../App";
 import DropDown from "./DropDown";
 import { AiFillCaretDown } from "react-icons/ai";
+import { FaCartArrowDown } from "react-icons/fa";
 
 const SecondaryNavbar = ({ toggleMenu }) => {
 	const { isLoading, error, categories } = useContext(modalContext);
@@ -72,18 +73,25 @@ const SecondaryNavbar = ({ toggleMenu }) => {
 		>
 			<div className="md:px-0 md:max-w-3xl mx-auto md:text-sm lg:max-w-4xl lg:px-0 xl:max-w-6xl">
 				<div
-					className="py-2 px-4 flex justify-end md:hidden"
+					className="py-2 px-4 flex justify-end lg:hidden cursor-pointer"
 					onClick={toggleMenu}
 				>
 					<FcMenu size={20} />
 				</div>
-				<ul className="hidden md:flex flex-col gap-4 md:gap-8 md:flex-row md:px-8 md:justify-between items-center  text-white lg:px-0 lg:text-base">
-					<li className="py-4">
-						<Link to="/" className="uppercase">
-							Home
+				<ul className="hidden lg:flex flex-col md:flex-row md:px-8 md:justify-between items-center  text-white lg:px-0 xl:text-base">
+					<div className="flex gap-6">
+						<li className="py-4">
+							<Link to="/" className="uppercase">
+								Home
+							</Link>
+						</li>
+						{content}
+					</div>
+					<div>
+						<Link to="/checkout" className="hidden lg:block">
+							<FaCartArrowDown size={22} />
 						</Link>
-					</li>
-					{content}
+					</div>
 				</ul>
 			</div>
 		</nav>

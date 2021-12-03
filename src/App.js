@@ -10,10 +10,10 @@ import Offers from "./pages/Offers";
 import About from "./pages/About";
 import Faq from "./pages/Faq";
 import Codes from "./pages/Codes";
-import Single from "./pages/Single";
 import Checkout from "./pages/Checkout";
 import ForgotPassword from "./pages/ForgotPassword";
 import Categories from "./pages/Categories";
+import DetailProduct from "./pages/DetailProduct";
 
 export const modalContext = React.createContext();
 const base_url = "https://uat.ordering-boafresh.ekbana.net/";
@@ -26,7 +26,6 @@ function App() {
 	const [isShowing, setIsShowing] = useState(false);
 	const closeModal = () => setIsShowing(false);
 	const showModal = () => setIsShowing(true);
-	const [total, setTotal] = useState(0);
 	const [isMessage, setIsMessage] = useState(false);
 	const [message, setMessage] = useState("");
 	const [newAccount, setNewAccount] = useState(false);
@@ -39,23 +38,9 @@ function App() {
 	const [modalContent, setModalContent] = useState();
 	const [success, setSuccess] = useState(false);
 
-	const fetchCartData = async () => {
-		const responseCartData = await fetch(`${base_url}/api/v4/cart`, {
-			method: "GET",
-			headers: {
-				"Content-Type": "application/json",
-				"Api-key": api_key,
-				"Warehouse-Id": 1,
-				Authorization: currentUser.access_token,
-			},
-		});
-		const fetchedCartData = await responseCartData.json();
-		setCartData(fetchedCartData.data);
-	};
-
 	useEffect(() => {
 		fetchCartData();
-	}, [currentUser, addItem]);
+	}, [currentUser, addItem, cartData]);
 
 	const fetchData = useCallback(async () => {
 		setIsLoading(true);
@@ -88,21 +73,48 @@ function App() {
 			setError(error.message);
 		}
 		setIsLoading(false);
+		console.log("In fetch home data");
 	}, []);
 
 	useEffect(() => {
 		fetchData();
 	}, [fetchData]);
 
-	const deleteItem = (id) => {
-		// const filteredCart = cart.filter((data) => data.id !== id);
-		// setCart(filteredCart);
-	};
-
 	const currentItem = (item) => {
 		setModalContent(item);
 	};
 
+	// API call to fetch cart data of current user
+	const fetchCartData = async () => {
+		const responseCartData = await fetch(`${base_url}/api/v4/cart`, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+				"Api-key": api_key,
+				"Warehouse-Id": 1,
+				Authorization: currentUser.access_token,
+			},
+		});
+		const fetchedCartData = await responseCartData.json();
+		setCartData(fetchedCartData.data);
+		console.log("In fetch cart data");
+	};
+
+	// API call to delete item
+	const deleteItem = async (id) => {
+		const response = await fetch(`${base_url}/api/v4/cart-product/${id}`, {
+			method: "DELETE",
+			headers: {
+				"Content-Type": "application/json",
+				"Api-key": api_key,
+				"Warehouse-Id": 1,
+				Authorization: currentUser.access_token,
+				cartProductId: id,
+			},
+		});
+	};
+
+	// API call to add to cart
 	const addToCart = async (item) => {
 		const response = await fetch(`${base_url}/api/v4/cart-product`, {
 			method: "POST",
@@ -125,6 +137,7 @@ function App() {
 		setSuccess(true);
 	};
 
+	// API call to update cart
 	const updateCart = async ({ quantity, id }) => {
 		const response = await fetch(`${base_url}/api/v4/cart-product/${id}`, {
 			method: "PATCH",
@@ -148,8 +161,6 @@ function App() {
 		isShowing,
 		closeModal,
 		showModal,
-		total,
-		setTotal,
 		deleteItem,
 		addToCart,
 		base_url,
@@ -189,9 +200,9 @@ function App() {
 				<Route path="/faq" element={<Faq />} />
 				<Route path="/codes" element={<Codes />} />
 				<Route path="/checkout" element={<Checkout />} />
-				<Route path="/single" element={<Single />} />
 				<Route path="/forgot-password" element={<ForgotPassword />} />
 				<Route path="/categories" element={<Categories />} />
+				<Route path="/products/:slug" element={<DetailProduct />} />
 			</Routes>
 		</modalContext.Provider>
 	);

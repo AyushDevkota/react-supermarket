@@ -13,7 +13,7 @@ const NewDishes = () => {
 				<PageTitle title={homeData.data[2].sectionDetails.title} />
 				<div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
 					{homeData.data[2].sectionDetails.products.map((item) => (
-						<Item data={item} key={item.id} />
+						<Item data={item} key={item.id} loading="lazy" />
 					))}
 				</div>
 			</>

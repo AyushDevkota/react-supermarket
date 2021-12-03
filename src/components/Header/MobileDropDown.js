@@ -24,7 +24,7 @@ const MobileDropDown = ({ isOpen, toggleMenu }) => {
 		<ul
 			className={
 				isOpen
-					? "flex flex-col gap-4 md:gap-0 md:flex-row justify-between items-center py-4 text-white bg-orange"
+					? "flex flex-col gap-4 lg:gap-0 lg:flex-row justify-between items-center py-4 text-white bg-orange"
 					: "hidden"
 			}
 			onClick={toggleMenu}

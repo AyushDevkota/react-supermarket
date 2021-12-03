@@ -12,7 +12,7 @@ const DropDown = ({ data, hover }) => {
 				{data.map((item) => {
 					return (
 						<li key={item.id}>
-							<Link to={item.slug}>{item.title}</Link>
+							<Link to={`/categories/${item.slug}`}>{item.title}</Link>
 						</li>
 					);
 				})}

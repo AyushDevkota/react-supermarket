@@ -5,7 +5,7 @@ import { modalContext } from "../App";
 
 const Categories = () => {
 	const { homeData, isLoading, error } = useContext(modalContext);
-	let content = <p></p>;
+	let content;
 	if (Object.keys(homeData).length > 0) {
 		content = homeData.data[1].categories.map((item) => (
 			<CategoryItem key={item.id} data={item} />

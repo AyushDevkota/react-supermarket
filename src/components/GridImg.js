@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { modalContext } from "../App";
+import { Link } from "react-router-dom";
 
 const GridImg = () => {
 	const { homeData, isLoading, error } = useContext(modalContext);
@@ -7,16 +8,24 @@ const GridImg = () => {
 	if (Object.keys(homeData).length > 0) {
 		content = (
 			<>
-				<img
-					src={homeData.data[5].details[0].images}
-					alt={homeData.data[5].details[0].title}
+				<Link
+					to="/categories"
 					className="md:w-1/2 transform hover:scale-110 duration-1000 ease w-full"
-				/>
-				<img
-					src={homeData.data[5].details[1].images}
-					alt={homeData.data[5].details[1].title}
+				>
+					<img
+						src={homeData.data[5].details[0].images}
+						alt={homeData.data[5].details[0].title}
+					/>
+				</Link>
+				<Link
+					to="/categories"
 					className="md:w-1/2 transform hover:scale-110 duration-1000 ease w-full"
-				/>
+				>
+					<img
+						src={homeData.data[5].details[1].images}
+						alt={homeData.data[5].details[1].title}
+					/>
+				</Link>
 			</>
 		);
 	}

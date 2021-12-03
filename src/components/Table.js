@@ -3,9 +3,12 @@ import { modalContext } from "../App";
 
 const Table = () => {
 	const { deleteItem, cartData } = useContext(modalContext);
-	let numberOfProducts, content;
-	if (cartData !== undefined || cartData.length > 0) {
+	let content;
+	let numberOfProducts = 0;
+	let total = 0;
+	if (cartData !== undefined) {
 		numberOfProducts = cartData.cartProducts.length;
+		total = cartData.total;
 		content = cartData.cartProducts.map(
 			(
 				{
@@ -38,7 +41,9 @@ const Table = () => {
 							<div className="flex justify-center items-center">
 								<button
 									className="border font-bold h-5 w-5 flex justify-center items-center bg-gray-500 text-white md:h-8 md:w-8"
-									onClick={() => deleteItem(id)}
+									onClick={() => {
+										deleteItem(id);
+									}}
 								>
 									X
 								</button>
@@ -71,7 +76,7 @@ const Table = () => {
 			</table>
 			<div className="pt-10 flex flex-col justify-between items-center">
 				<div className="mx-auto uppercase py-4 text-xl lg:text-3xl font-semibold">
-					Total - NRS {cartData.total}
+					Total - NRS {total}
 				</div>
 				<button className="px-4 py-2 text-white uppercase rounded-2xl bg-btnblue hover:bg-orange">
 					proceed to checkout

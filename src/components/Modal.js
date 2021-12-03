@@ -2,12 +2,18 @@ import React, { useContext, useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import { modalContext } from "../App";
 import Counter from "./Counter";
+import { useNavigate } from "react-router-dom";
 
 const Modal = ({ closeModal }) => {
-	const { modalContent, addToCart, cartData, updateCart } =
+	let navigate = useNavigate();
+	const { modalContent, addToCart, cartData, updateCart, currentUser } =
 		useContext(modalContext);
 	const [value, setValue] = useState(1);
 	const checkCart = (id, val, price) => {
+		if (!currentUser) {
+			navigate("/login");
+			return;
+		}
 		const product = cartData.cartProducts.filter(
 			(product) => product.product.id === id
 		);
