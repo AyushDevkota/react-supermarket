@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { modalContext } from "../../App";
 
 const PrimaryNavbar = () => {
+	const { currentUser, setCurrentUser } = useContext(modalContext);
 	return (
 		<nav className=" bg-lightgray text-white py-4 px-8 mx-auto text-center md:text-left lg:py-5">
 			<div className="flex flex-col gap-4 md:flex-row items-center justify-between mx-auto md:max-w-3xl lg:max-w-4xl xl:max-w-6xl">
@@ -18,7 +20,16 @@ const PrimaryNavbar = () => {
 						<Link to="/register">Create Account</Link>
 					</li>
 					<li>
-						<Link to="/login">Login</Link>
+						{currentUser ? (
+							<button
+								className="font-medium"
+								onClick={() => setCurrentUser("")}
+							>
+								Logout
+							</button>
+						) : (
+							<Link to="/login">Login</Link>
+						)}
 					</li>
 					<li>
 						<Link to="/contact">Help</Link>

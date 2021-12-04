@@ -6,7 +6,8 @@ const Table = () => {
 	let content;
 	let numberOfProducts = 0;
 	let total = 0;
-	if (cartData !== undefined) {
+	
+	if (cartData) {
 		numberOfProducts = cartData.cartProducts.length;
 		total = cartData.total;
 		content = cartData.cartProducts.map(

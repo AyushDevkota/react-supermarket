@@ -41,6 +41,7 @@ const LoginForm = () => {
 		const { access_token } = data;
 		setCurrentUser({ access_token });
 		setSuccess(false);
+		localStorage.setItem("login", access_token);
 		navigate("/");
 	};
 

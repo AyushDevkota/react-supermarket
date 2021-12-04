@@ -32,7 +32,7 @@ function App() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
 	const [categories, setCategories] = useState([]);
-	const [cartData, setCartData] = useState([]);
+	const [cartData, setCartData] = useState();
 	const [addItem, setAddItem] = useState();
 	const [modalContent, setModalContent] = useState();
 	const [success, setSuccess] = useState(false);
@@ -72,6 +72,10 @@ function App() {
 			setError(error.message);
 		}
 		setIsLoading(false);
+		const user = localStorage.getItem("login");
+		if (user) {
+			setCurrentUser({ access_token: user });
+		}
 	}, []);
 
 	useEffect(() => {
